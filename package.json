@@ -1,0 +1,16 @@
+{
+  "name": "js-registration-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validation.js",
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0"
+  }
+}
