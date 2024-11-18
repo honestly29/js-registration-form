@@ -1,46 +1,50 @@
-const { validateFirstName, validateEmail } = require('./validation');
 
+/**
+ * @jest-environment jsdom
+ */
+
+const { validateName, validateEmail } = require('./validation');
 
 // First name unit tests
-describe('validateFirstName', () => {
+describe('validateName', () => {
     test('returns true for valid first name', () => {
-        expect(validateFirstName('John')).toBe(true); 
+        expect(validateName('John')).toBe(true); 
     });
 
     test('returns true for names with 1 character', () => {
-        expect(validateFirstName('J')).toBe(true);
+        expect(validateName('J')).toBe(true);
     });
 
     test('returns true for names with hyphens', () => {
-        expect(validateFirstName('Jean-Paul')).toBe(true);
+        expect(validateName('Jean-Paul')).toBe(true);
     });
 
     test('returns true for names with leading or trailing whitespace', () => {
-        expect(validateFirstName(' John ')).toBe(true);
+        expect(validateName(' John ')).toBe(true);
     });
 
     test('returns true for names with apostrophes', () => {
-        expect(validateFirstName("O'Connor")).toBe(true);
+        expect(validateName("O'Connor")).toBe(true);
     });
 
     test('returns false for names with numbers', () => {
-        expect(validateFirstName('John1')).toBe(false);
+        expect(validateName('John1')).toBe(false);
     });
 
     test('returns false for names with special characters', () => {
-        expect(validateFirstName('John!')).toBe(false);
+        expect(validateName('John!')).toBe(false);
     });
 
     test('returns false for empty string', () => {
-        expect(validateFirstName('')).toBe(false);
+        expect(validateName('')).toBe(false);
     });
 
     test('returns false for empty strings with white space', () => {
-        expect(validateFirstName(' ')).toBe(false);
+        expect(validateName(' ')).toBe(false);
     });
 
     test('returns false for name exceeding 30 characters', () => {
-        expect(validateFirstName('ThisIsAReallyLongLastNameThatExceedsThirtyCharacters')).toBe(false);
+        expect(validateName('ThisIsAReallyLongLastNameThatExceedsThirtyCharacters')).toBe(false);
     });
 });
 

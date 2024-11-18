@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login Form</title>
+    <script defer src="validation.js"></script>
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
         form {border: 3px solid #f1f1f1;}
@@ -69,21 +70,29 @@
 <body>
 
     <h2>Login Form</h2>
-    <form id="userForm" novalidate>
+    <form id="loginForm" action="/" novalidate>
         <div class="container">
+
             <label for="fname"><b>First Name</b></label>
             <input type="text" id="fname" placeholder="Enter First Name" name="fname" required>
             <span id="fnameError" class="error-message"></span>
 
+            <label for="lname"><b>Last Name</b></label>
+            <input type="text" id="lname" placeholder="Enter Last Name" name="lname" required>
+            <span id="lnameError" class="error-message"></span>
+
+            <label for="email"><b>Email Address</b></label>
+            <input type="text" id="email" placeholder="Enter Email Address" name="email" required>
+            <span id="emailError" class="error-message"></span>
+
 
             <button type="submit">Login</button>
-            <label>
+
+            <!-- <label>
                 <input type="checkbox" id="tos" name="tos"> Terms of Service
             </label> 
-            <span id="tosError" class="error-message"></span>  
+            <span id="tosError" class="error-message"></span>   -->
         </div>
     </form>
-
-    <script src="validation.js"></script>
 </body>
 </html>
