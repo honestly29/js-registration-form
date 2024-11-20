@@ -18,6 +18,26 @@
             box-sizing: border-box;
         }
 
+        #dob-container {
+            display: flex;
+            gap: 10px; /* Adds space between inputs */
+            align-items: center; /* Ensures vertical alignment if input heights vary */
+            margin: 8px 0; /* Matches the margin of other inputs */
+        }
+
+        #dob-container input {
+            width: 60px; /* Adjust width for day and month fields */
+            padding: 12px 10px;
+            text-align: center; /* Centers the text */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #dob-container input#dob-year {
+            width: 100px; /* Wider input for the year */
+        }
+
         button {
             background-color: #04AA6D;
             color: white;
@@ -85,8 +105,29 @@
             <input type="text" id="email" placeholder="Enter Email Address" name="email" required>
             <span id="emailError" class="error-message"></span>
 
+            <label for="age"><b>Age</b></label>
+            <input type="text" id="age" placeholder="Enter Age" name="age" required>
+            <span id="ageError" class="error-message"></span>
 
-            <button type="submit">Login</button>
+            <label for="dob-day"><b>Date of Birth</b></label>
+            <div id="dob-container">
+                <!-- Day Input -->
+                <input type="text" id="dob-day" name="dob-day" inputmode="numeric" maxlength="2" placeholder="DD" pattern="\d{1,2}">
+                <!-- Month Input -->
+                <input type="text" id="dob-month" name="dob-month" inputmode="numeric" maxlength="2" placeholder="MM" pattern="\d{1,2}" required>
+                <!-- Year Input -->
+                <input type="text" id="dob-year" name="dob-year" maxlength="4" placeholder="YYYY" pattern="\d{4}"required>
+            </div>
+            <span id="dobError" class="error-message"></span>
+
+            <label for="country"><b>Country of Residence</b></label>
+            <select id="country" name="country" required>
+                <option value="">Select a country</option>
+            </select>
+            <span id="countryError" class="error-message"></span>
+
+
+            <button onclick="submitForm()" type="submit">Login</button>
 
             <!-- <label>
                 <input type="checkbox" id="tos" name="tos"> Terms of Service
