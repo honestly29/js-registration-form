@@ -5,6 +5,9 @@
 global.fetch = jest.fn();
 
 const { validateName, validateEmail, validateAge, validateDob, validateAgeAndDobMatch } = require('./validation');
+// const { JSDOM } = require('jsdom');
+// const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
+// global.document = dom.window.document;
 
 // First name unit tests
 describe('validateName', () => {
